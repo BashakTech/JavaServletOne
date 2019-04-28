@@ -20,10 +20,10 @@ public class AddServlet extends HttpServlet {
 		
 		k = i+j;
 		
-		request.setAttribute("k", k);
+		response.sendRedirect("sq");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("sq");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("sq");
+//		rd.forward(request, response);
 	}
 
 }
