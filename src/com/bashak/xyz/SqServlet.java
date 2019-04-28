@@ -3,6 +3,7 @@ package com.bashak.xyz;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +13,15 @@ public class SqServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		HttpSession session = request.getSession();
-		int k = (int) session.getAttribute("k");
+		int k = 0;
+		Cookie cookies[] =  request.getCookies();
+		
+		for(Cookie c : cookies) {
+			
+			if(c.getName().equals("k")) {
+				k = Integer.parseInt(c.getValue());
+			}
+		}
 		
 		int g = k*k;
 		
