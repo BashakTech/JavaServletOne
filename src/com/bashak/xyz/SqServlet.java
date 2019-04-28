@@ -11,8 +11,11 @@ public class SqServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
+		int k = (int) request.getAttribute("k");
+		int g = k*k;
+		
 		PrintWriter out = response.getWriter();
-		out.println("Hello to Sq");
+		out.println("Result of g =k*k is: " +g);
 	}
 
 }

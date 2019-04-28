@@ -19,7 +19,8 @@ public class AddServlet extends HttpServlet {
 		j = Integer.parseInt(request.getParameter("num2"));
 		
 		k = i+j;
-		k = k*k;
+		
+		request.setAttribute("k", k);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("sq");
 		rd.forward(request, response);
