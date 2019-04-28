@@ -3,13 +3,15 @@ package com.bashak.xyz;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		int i, j, k;
 		
@@ -17,10 +19,10 @@ public class AddServlet extends HttpServlet {
 		j = Integer.parseInt(request.getParameter("num2"));
 		
 		k = i+j;
+		k = k*k;
 		
-		PrintWriter out = response.getWriter();
-		
-		out.println("Result is = " +k);
+		RequestDispatcher rd = request.getRequestDispatcher("sq");
+		rd.forward(request, response);
 	}
 
 }
