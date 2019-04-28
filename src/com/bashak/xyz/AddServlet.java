@@ -24,13 +24,11 @@ public class AddServlet extends HttpServlet {
 		
 		k = i+j;
 		
-		Cookie cookie = new Cookie("k", k + "");
-		response.addCookie(cookie);
+		PrintWriter out = response.getWriter();
+		out.println("<html><body bgcolor='cyan'>");
+		out.println("Output: " +k);
+		out.println("</body></html>");
 		
-		response.sendRedirect("sq");
-		
-//		RequestDispatcher rd = request.getRequestDispatcher("sq");
-//		rd.forward(request, response);
 	}
 
 }
