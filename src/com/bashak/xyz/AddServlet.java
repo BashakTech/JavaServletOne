@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet {
 	
@@ -19,6 +20,9 @@ public class AddServlet extends HttpServlet {
 		j = Integer.parseInt(request.getParameter("num2"));
 		
 		k = i+j;
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("k", k);
 		
 		response.sendRedirect("sq");
 		

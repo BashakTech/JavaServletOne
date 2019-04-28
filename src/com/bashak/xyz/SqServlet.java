@@ -6,12 +6,15 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class SqServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		int k = Integer.parseInt(request.getParameter("k"));
+		HttpSession session = request.getSession();
+		int k = (int) session.getAttribute("k");
+		
 		int g = k*k;
 		
 		PrintWriter out = response.getWriter();
