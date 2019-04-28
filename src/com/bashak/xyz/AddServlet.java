@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
 	
-	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		int i, j, k;
 		
