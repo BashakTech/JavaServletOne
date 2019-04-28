@@ -5,7 +5,13 @@
   <servlet>
   	<servlet-name>abc</servlet-name>
   	<servlet-class>com.bashak.xyz.MyServlet</servlet-class>
+  	
+  	<init-param>
+  		<param-name>name</param-name>
+  	<param-value>Bashak</param-value>
+  	</init-param>
   </servlet>
+  
   <servlet-mapping>
   	<servlet-name>abc</servlet-name>
   	<url-pattern>/home</url-pattern>
